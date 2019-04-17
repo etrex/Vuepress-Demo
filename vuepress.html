@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>使用 VuePress 來做個俄羅斯方塊攻略 | 使用 VuePress 來做個俄羅斯方塊攻略</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/Vuepress-Demo/assets/css/0.styles.16c73a61.css" as="style"><link rel="preload" href="/Vuepress-Demo/assets/js/app.444ac1d0.js" as="script"><link rel="preload" href="/Vuepress-Demo/assets/js/5.a9bcf075.js" as="script"><link rel="prefetch" href="/Vuepress-Demo/assets/js/2.8c90b667.js"><link rel="prefetch" href="/Vuepress-Demo/assets/js/3.0a64c745.js"><link rel="prefetch" href="/Vuepress-Demo/assets/js/4.65b9cffa.js"><link rel="prefetch" href="/Vuepress-Demo/assets/js/6.c6708033.js">
+    <link rel="stylesheet" href="/Vuepress-Demo/assets/css/0.styles.16c73a61.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Vuepress-Demo/" class="home-link router-link-active"><!----> <span class="site-name">使用 VuePress 來做個俄羅斯方塊攻略</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><!---->  <!----> </div> <div class="page"> <div class="content"><h1 id="使用-vuepress-來做個俄羅斯方塊攻略"><a href="#使用-vuepress-來做個俄羅斯方塊攻略" aria-hidden="true" class="header-anchor">#</a> 使用 VuePress 來做個俄羅斯方塊攻略</h1> <p>大家好，我是卡米哥。今天要教大家怎麼用 VuePress 來做這個俄羅斯方塊攻略網站：<a href="https://etrex.tw/Vuepress-Demo/" target="_blank" rel="noopener noreferrer">https://etrex.tw/Vuepress-Demo/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <p>本篇文章架構如下：</p> <ul><li>VuePress 簡介</li> <li>Markdown 簡介</li> <li>VuePress 安裝</li> <li>VuePress 試用</li> <li>Markdown-It 簡介</li> <li>Markdown-It-Plugin 簡介</li> <li>Markdown-It-Tetris</li> <li>在 VuePress 安裝 Markdown-It-Tetris</li> <li>設定 VuePress Style</li> <li>實際撰寫攻略</li> <li>GitHub 簡介</li> <li>GitHub Pages 簡介</li> <li>發布至 GitHub Pages</li></ul> <h2 id="vuepress-簡介"><a href="#vuepress-簡介" aria-hidden="true" class="header-anchor">#</a> VuePress 簡介</h2> <p>VuePress 是一個靜態網站產生器，使用 Markdown 來撰寫文章，適合用來做簡單的部落格。他的特色是產生出來的靜態網站具有 SPA（單頁式網站）架構。</p> <h2 id="markdown-簡介"><a href="#markdown-簡介" aria-hidden="true" class="header-anchor">#</a> Markdown 簡介</h2> <p>因為寫 HTML 要打很多字很麻煩，所以世界上有了 Markdown，Markdown 好棒棒。</p> <p>Markdown 是一種標記式語言，或者簡單的說就是一種文字檔的格式，其副檔名為 <code>.md</code>，可以很輕易的透過 Markdown Parser 將 <code>.md</code> 轉換為 <code>.html</code> 或者其他格式的內容。</p> <h2 id="vuepress-安裝"><a href="#vuepress-安裝" aria-hidden="true" class="header-anchor">#</a> VuePress 安裝</h2> <p>在 Terminal 輸入以下指令即可安裝 VuePress。</p> <div class="language- extra-class"><pre class="language-text"><code>npm install -g vuepress
+</code></pre></div><p>如果你不曉得怎麼操作 Terminal，可以參考龍哥的<a href="https://gitbook.tw/chapters/command-line/command-line.html" target="_blank" rel="noopener noreferrer">Git 教學：終端機及常用指令介紹<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <p>如果輸入指令後看到以下訊息，代表你還沒有安裝 node.js，請至 <a href="https://nodejs.org/en/" target="_blank" rel="noopener noreferrer">nodejs.org<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 安裝。</p> <div class="language- extra-class"><pre class="language-text"><code>command not found: npm
+</code></pre></div><p>如果成功的話會需要等一下，安裝 VuePress 需要一點時間。</p> <h2 id="vuepress-試用"><a href="#vuepress-試用" aria-hidden="true" class="header-anchor">#</a> VuePress 試用</h2> <p>以下是建立一個新的 VuePress 專案的流程：</p> <ul><li>找一個空資料夾作為你的專案資料夾</li> <li>新增資料夾 <code>docs</code></li> <li>新增文件 <code>docs/README.md</code></li> <li>新增檔案 <code>package.json</code></li> <li>建立 <code>package.json</code> 檔案</li></ul> <h3 id="找一個空資料夾作為你的專案資料夾"><a href="#找一個空資料夾作為你的專案資料夾" aria-hidden="true" class="header-anchor">#</a> 找一個空資料夾作為你的專案資料夾</h3> <p>首先建立一個空資料夾作為專案資料夾</p> <h3 id="新增資料夾-docs"><a href="#新增資料夾-docs" aria-hidden="true" class="header-anchor">#</a> 新增資料夾 docs</h3> <p>在專案資料夾下新增一個名為 <code>docs</code> 的資料夾</p> <h3 id="新增文件-docs-readme-md"><a href="#新增文件-docs-readme-md" aria-hidden="true" class="header-anchor">#</a> 新增文件 docs/README.md</h3> <p>在 <code>docs</code> 資料夾新增一個名為 <code>README.md</code> 的檔案，並且輸入以下文字：</p> <div class="language- extra-class"><pre class="language-text"><code># 網站目錄
+
+- [VuePress 簡介](https://vuepress.vuejs.org)
+- [Markdown 簡介](https://markdown.tw/)
+- [Puyo Puyo Tetris 簡介](https://store.steampowered.com/app/546050/Puyo_PuyoTetris/)
+- [DT Cannon 攻略](/dt_cannon.md)
+
+Markdown 好棒棒
+</code></pre></div><p>這個語法就是 Markdown 語法，詳細語法請參考 <a href="https://markdown.tw/" target="_blank" rel="noopener noreferrer">Markdown 簡介<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，以上僅示範最重要的標題、超連結、清單的部分。</p> <h3 id="新增檔案-package-json"><a href="#新增檔案-package-json" aria-hidden="true" class="header-anchor">#</a> 新增檔案 package.json</h3> <p>在專案資料夾下新增一個名為 <code>package.json</code> 的檔案，並且輸入以下文字：</p> <div class="language- extra-class"><pre class="language-text"><code>{
+  &quot;scripts&quot;: {
+    &quot;docs:dev&quot;: &quot;vuepress dev docs&quot;,
+    &quot;docs:build&quot;: &quot;vuepress build docs&quot;
+  }
+}
+</code></pre></div><h3 id="執行-vuepress"><a href="#執行-vuepress" aria-hidden="true" class="header-anchor">#</a> 執行 VuePress</h3> <p>在專案資料夾下的 Termainal 輸入以下指令來做測試：</p> <div class="language- extra-class"><pre class="language-text"><code>npm run docs:dev
+</code></pre></div><p>成功時會看到以下訊息，代表目前架好了一個網站，而且正在運行。</p> <div class="language- extra-class"><pre class="language-text"><code> DONE  [17:06:51] Build d96bf4 finished in 6292 ms!
+
+&gt; VuePress dev server listening at http://localhost:8080/
+</code></pre></div><p>這時候可以到瀏覽器的網址列輸入 <a href="http://localhost:8080/" target="_blank" rel="noopener noreferrer">http://localhost:8080/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 來查看網站。如果想要關掉網站，在 Windows 可以至 Terminal 輸入 <code>Ctrl + C</code>，如果是 MacOS 請輸入 <code>Command + C</code></p> <h2 id="markdown-it-簡介"><a href="#markdown-it-簡介" aria-hidden="true" class="header-anchor">#</a> Markdown-It 簡介</h2> <p>若想要將 Markdown 格式轉換為 HTML，需要用到 Markdown Parser，在這個世界上有許多款 Markdown Parser，而 <a href="https://github.com/markdown-it/markdown-it" target="_blank" rel="noopener noreferrer">Markdown-It<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 是其中一款。而我們使用的 Vuepress，正是採用 <a href="https://github.com/markdown-it/markdown-it" target="_blank" rel="noopener noreferrer">Markdown-It<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 作為 Markdown Parser。</p> <h2 id="markdown-it-plugin-簡介"><a href="#markdown-it-plugin-簡介" aria-hidden="true" class="header-anchor">#</a> Markdown-It-Plugin 簡介</h2> <p>Markdown 支援的語法很豐富，包含標題、清單、超連結、圖片、分隔線、程式碼區塊、引言區塊、表格等。但透過 Plugin，我們可以擴充 Markdown 的功能，讓它更加豐富，像是支援 Letax、emoji、各式圖表等的顯示，都能夠透過 Markdown Plugin 來達成。你也可以寫一個自己的 Markdown-It-Plugin 來定義自己的 Markdown 語法，以及轉換後的 HTML 內容。</p> <h2 id="markdown-it-tetris"><a href="#markdown-it-tetris" aria-hidden="true" class="header-anchor">#</a> Markdown-It-Tetris</h2> <p>神奇的是竟然有人閒到做了一個 Markdown-It-Plugin 專門用來顯示俄羅斯方塊盤面：<a href="https://github.com/etrex/markdown-it-tetris" target="_blank" rel="noopener noreferrer">Markdown-It-Tetris<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>如果你在 Markdown 中輸入以下內容：</p> <div class="language- extra-class"><pre class="language-text"><code>tetris{
+
+    t
+   ttti
+    ssizz
+oo sslijzz
+oo lllijjj
+}
+</code></pre></div><p>透過 Markdown-It-Tetris，將會被轉換為以下 HTML：</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;div class=&quot;tetris&quot;&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;br/&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-t&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;br/&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-t&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-t&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-t&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-i&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;br/&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-s&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-s&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-i&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-z&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-z&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;br/&gt;
+&lt;span class=&quot;tetris-o&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-o&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-s&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-s&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-i&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-j&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-z&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-z&quot;&gt;&lt;/span&gt;
+&lt;br/&gt;
+&lt;span class=&quot;tetris-o&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-o&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-empty&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-l&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-i&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-j&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-j&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;tetris-j&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre></div><p>這段 HTML 是需要搭配對應的 CSS 來呈現，如果單純就這段 HTML，在任何一個瀏覽器上看起來是都會是完全空白的畫面。</p> <p>接下來說明如何在 VuePress 安裝 Markdown-It-Tetris，以及如何在 VuePress 上寫 CSS。</p> <h2 id="在-vuepress-安裝-markdown-it-tetris"><a href="#在-vuepress-安裝-markdown-it-tetris" aria-hidden="true" class="header-anchor">#</a> 在 VuePress 安裝 Markdown-It-Tetris</h2> <p>安裝 Markdown-It-Tetris 到 VuePress 有兩個步驟：</p> <ul><li>安裝 Markdown-It-Tetris</li> <li>在 VuePress 指定使用 Markdown-It-Tetris</li></ul> <h3 id="安裝-markdown-it-tetris"><a href="#安裝-markdown-it-tetris" aria-hidden="true" class="header-anchor">#</a> 安裝 Markdown-It-Tetris</h3> <p>在專案資料夾下的 Termainal 輸入以下指令：</p> <div class="language- extra-class"><pre class="language-text"><code>npm install markdown-it-tetris --save
+</code></pre></div><p>這段指令的意思是將 Markdown-It-Tetris 安裝到你的專案上。</p> <h3 id="在-vuepress-指定使用-markdown-it-tetris"><a href="#在-vuepress-指定使用-markdown-it-tetris" aria-hidden="true" class="header-anchor">#</a> 在 VuePress 指定使用 Markdown-It-Tetris</h3> <p>在 <code>docs</code> 資料夾下建立一個名為 <code>.vuepress</code> 的資料夾，再到 <code>.vuepress</code> 資料夾下建立一個名為 <code>config.js</code> 的檔案，並且輸入以下內容：</p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  title: '使用 VuePress 來做個俄羅斯方塊攻略',
+  markdown: {
+    config: md =&gt; {
+      md.use(require('markdown-it-tetris'))
+    }
+  }
+}
+</code></pre></div><p><code>config.js</code> 是設定檔，用來設定 VuePress 的一些參數，而我們設定的內容是指定要在 Markdown 當中使用 Markdown-It-Tetris。</p> <h2 id="設定-vuepress-style"><a href="#設定-vuepress-style" aria-hidden="true" class="header-anchor">#</a> 設定 VuePress Style</h2> <p>現在我們要幫 Markdown-It-Tetris 產生出來的 HTML 加上一點顏色。到 <code>.vuepress</code> 資料夾下建立一個名為 <code>style.styl</code> 的檔案，並且輸入以下內容：</p> <div class="language- extra-class"><pre class="language-text"><code>.tetris{
+  background-color: black;
+  border: 10px solid #333333;
+  display: inline-block;
+  font-size: 0px;
+}
+.tetris span{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.tetris-t{
+  background-color: rgb(142, 0, 207);
+}
+.tetris-z{
+  background-color: #f00;
+}
+.tetris-i{
+  background-color: rgb(0, 197, 197);
+}
+.tetris-s{
+  background-color: rgb(17, 146, 0);
+}
+.tetris-o{
+  background-color: rgb(255, 238, 0);
+}
+.tetris-j{
+  background-color: rgb(0, 17, 255);
+}
+.tetris-l{
+  background-color: rgb(255, 123, 0);
+}
+.tetris-g{
+  background-color: rgb(80, 80, 80);
+}
+</code></pre></div><p>這樣就完成了。</p> <h2 id="實際撰寫攻略"><a href="#實際撰寫攻略" aria-hidden="true" class="header-anchor">#</a> 實際撰寫攻略</h2> <p>在 <code>docs</code> 資料夾新增一個名為 <code>dt_cannon.md</code> 的檔案，並且輸入以下文字（文長）：</p> <div class="language- extra-class"><pre class="language-text"><code>## Puyo Puyo Tetris 簡介
+
+[Puyo Puyo Tetris](https://store.steampowered.com/app/546050/Puyo_PuyoTetris/) 是一款支援多人對戰的魔法氣泡以及俄羅斯方塊混戰的遊戲，遊戲目標就是把對手堆高高。在各大平台上都有上架。推薦購買的版本是 Steam 版。
+
+## 攻擊計算
+在這款遊戲中的俄羅斯方塊如果消除時滿足某些條件，就能攻擊對手，造成對方的場地出現一些垃圾方塊，以下將大致說明：
+
+- Tetris：一次消除 4 層，可讓對手增高 4 層
+- T-Spin Double：利用 T-Spin 達成一次消除 2 層，可讓對手增高 4 層
+- T-Spin Triple：利用 T-Spin 達成一次消除 3 層，可讓對手增高 6 層
+- Back To Back：只使用 Tetris 以及 T-Spin 來做消除，可讓對手額外增高 1 層
+- Combo：連續消除，可讓對手額外增高 1 層以上
+- Perfect Clear：完全消除自己盤面上的所有方塊，可讓對手額外增高 10 層
+
+詳細說明請參考 [harddrop](http://harddrop.com/wiki/Puyo_Puyo_Tetris#Tetris_vs_Tetris_.28Versus.29)。
+
+所謂的 T-Spin 是指利用 T 方塊在特定的位置上旋轉，使 T 方塊抵達一個正常情況下無法抵達的位置。遊戲的設計者鼓勵大家多使用這種特殊技巧來做消除。
+
+## 方塊旋轉系統
+在俄羅斯方塊遊戲中，如果一個方塊的周圍沒有足夠大的空間放置旋轉後的方塊，就會卡住而無法旋轉。而方塊旋轉系統定義了什麼情況下可以旋轉，什麼情況下無法旋轉。近代的俄羅斯方塊由於 [The Tetris Company](https://en.wikipedia.org/wiki/The_Tetris_Company) 明文規定了[俄羅斯方塊遊戲實作指南](http://harddrop.com/wiki/Tetris_Guideline)，俄羅斯方塊遊戲必須採用 [Super Rotation System（SRS）方塊旋轉系統](http://harddrop.com/wiki/SRS)。在了解 SRS 方塊旋轉系統後，你就能知道什麼情況下 T-Spin 是可以成功的。
+
+## 方塊序列生成器
+在俄羅斯方塊遊戲當中，方塊總共有 7 種（I, J, L, O, S, T, Z），而方塊的生成並不一定是完全隨機的，有一種方塊序列生成器叫做 7 bag，7 bag 是每次生成一組 7 種方塊並且打亂排序，在 7 bag 的系統中你可以預期方塊的出現數量是絕對平均的，大多數近代的俄羅斯方塊對戰遊戲都有實作 7 bag，由於方塊的序列是可預期的，所以就能在遊戲開始之前，就預先設想好盤面的佈置。
+
+## DT Cannon 簡介
+DT Cannon 是一個非常知名的起手式，一套完整的 DT Cannon 攻擊，可以使對手在一瞬間增高 12 層，其實整個遊戲也只有 20 層而已。
+
+DT Cannon 就是如此兇狠致命的招。
+
+一個經典的 DT Cannon 是由三個 bag 所組成，其中第一個 bag 的配置如下：
+
+tetris {
+
+    t
+   ttti
+    ssizz
+oo sslijzz
+oo lllijjj
+}
+
+第二個 bag 的配置如下：
+
+tetris {
+
+  lls  z
+   lsszz i
+jj lgszooi
+j  ggggooi
+j   gggggi
+gg ggggggg
+gg ggggggg
+}
+
+由於我們需要使用兩個 T 方塊來進行連續消除，而第一個 bag 已經使用了一個 T，第二個 bag 的 T 我們儲存在 Hold，並且等待第三個 bag 中的 T 方塊的到來，就能發動攻擊了。
+
+第一個 T 的進入方式如下：
+
+tetris {
+
+t
+ttggg  g
+t  ggggg g
+gg ggggggg
+g  ggggggg
+g   gggggg
+gg ggggggg
+gg ggggggg
+}
+
+在此處逆時針旋轉方塊 2 次
+
+tetris {
+
+
+ tggg  g
+tttggggg g
+gg ggggggg
+g  ggggggg
+g   gggggg
+gg ggggggg
+gg ggggggg
+}
+
+tetris {
+
+
+  ggg  g
+   ggggg g
+ggtggggggg
+gttggggggg
+g t gggggg
+gg ggggggg
+gg ggggggg
+}
+
+等待方塊往下
+
+tetris {
+
+
+  ggg  g
+   ggggg g
+gg ggggggg
+g tggggggg
+gtt gggggg
+ggtggggggg
+gg ggggggg
+}
+
+再次逆時針旋轉方塊
+
+tetris {
+
+
+  ggg  g
+   ggggg g
+gg ggggggg
+g  ggggggg
+gtttgggggg
+ggtggggggg
+gg ggggggg
+}
+
+消除後
+
+tetris {
+
+
+  ggg  g
+   ggggg g
+gg ggggggg
+g  ggggggg
+gg ggggggg
+}
+
+此次消除造成 4 層傷害。
+
+第二個 T 的進入方式如下：
+
+tetris {
+
+t
+ttggg  g
+t  ggggg g
+gg ggggggg
+g  ggggggg
+gg ggggggg
+}
+
+在此處逆時針旋轉方塊 2 次
+
+tetris {
+
+
+ tggg  g
+tttggggg g
+gg ggggggg
+g  ggggggg
+gg ggggggg
+}
+
+tetris {
+
+
+  ggg  g
+   ggggg g
+ggtggggggg
+gttggggggg
+ggtggggggg
+}
+
+消除後
+
+tetris {
+
+
+  ggg  g
+   ggggg g
+}
+
+此次消除造成 8 層傷害。
+
+不是所有的起手順序都能採用以上的配置，但這是一個有很高機率可以成功的起手配置，請參考[更多的 DT Cannon Pattern](http://harddrop.com/wiki/Double_Triple_Cannon_Setups)
+</code></pre></div><p>現在可以重新執行 VuePress 並且進入首頁，最下面那個連結點進去就可以看到攻略囉！</p> <h2 id="github-簡介"><a href="#github-簡介" aria-hidden="true" class="header-anchor">#</a> GitHub 簡介</h2> <p>GitHub 是一個存放程式碼的網站，你可以將你的程式碼免費的存放到 GitHub 上，供大家觀賞。</p> <p>將程式碼放到 GitHub 的方法是使用 Git，關於 Git 的使用，請參考龍哥的<a href="https://gitbook.tw/" target="_blank" rel="noopener noreferrer">為你自己學 Git<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <h2 id="github-pages-簡介"><a href="#github-pages-簡介" aria-hidden="true" class="header-anchor">#</a> GitHub Pages 簡介</h2> <p>如果想要讓網站發布到網路上，而不是只能在自己的電腦上看的話，需要找到一台電腦並且維持連網的狀態，把我們的網站放到這台電腦上。</p> <p>GitHub Pages 就提供了這樣的功能，如果一個專案放到 GitHub 上，並且滿足 GitHub Pages 的規格，那麼 GitHub Pages 就允許你用瀏覽器輸入網址進入網站本體，而不是只能看到程式碼。</p> <h2 id="發布至-github-pages"><a href="#發布至-github-pages" aria-hidden="true" class="header-anchor">#</a> 發布至 GitHub Pages</h2> <p>現在我們要將我們的 VuePress 專案的內容發布成一個靜態網站的資料夾，再將這個靜態網站發布到 GitHub 上，並且在 GitHub 做一些設定值上的調整，變成一個實際發布在網路上的網站囉！</p> <p>在產生靜態網站之前，我們必須先在 VuePress 設定好與 GitHub Pages 搭配的基礎路徑，其基礎路徑必須與 GitHub Repository 的名稱相同。</p> <p>基礎路徑的設定是透過修改 <code>docs/.vuepress/config.js</code> 來完成。我預計使用 Vuepress-Demo 作為我的 GitHub Repository 名稱。</p> <div class="language- extra-class"><pre class="language-text"><code>module.exports = {
+  title: '使用 VuePress 來做個俄羅斯方塊攻略',
+  markdown: {
+    config: md =&gt; {
+      md.use(require('markdown-it-tetris'))
+    }
+  },
+  base: &quot;/Vuepress-Demo/&quot;
+}
+</code></pre></div><p>加入了基礎路徑後，原本的首頁將會從 http://localhost:8080/ 進入，變成從 http://localhost:8080/Vuepress-Demo/ 進入。</p> <h3 id="產生靜態網站"><a href="#產生靜態網站" aria-hidden="true" class="header-anchor">#</a> 產生靜態網站</h3> <p>在專案資料夾下的 Terminal 輸入以下指令：</p> <div class="language- extra-class"><pre class="language-text"><code>npm run docs:build
+</code></pre></div><p>成功後你會發現在 <code>docs/.vuepress</code> 資料夾下多了一個資料夾，叫做 <code>dist</code>。</p> <p>而在 <code>dist</code> 資料夾裡面有一個 <code>index.html</code>，這就是我們生成出來的靜態網站的首頁。 我們要把在 <code>dist</code> 資料夾下的所有檔案都上傳到 GitHub 上。</p> <h3 id="上傳程式碼到-github"><a href="#上傳程式碼到-github" aria-hidden="true" class="header-anchor">#</a> 上傳程式碼到 GitHub</h3> <p>如果你還沒有 GitHub 的帳號和專案，你需要先登入 GitHub，並且<a href="https://github.com/new" target="_blank" rel="noopener noreferrer">建立一個新的 repository<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，以下假設你新建的 Repository 名為 Vuepress-Demo。</p> <p>在專案資料夾下的 Terminal 輸入以下指令，即可上傳程式碼：</p> <div class="language- extra-class"><pre class="language-text"><code># 切換至專案資料夾
+cd docs/.vuepress/dist
+
+# 將程式碼加入 Git 管理
+git init
+git add -A
+git commit -m 'deploy'
+
+# 上傳至 GitHub
+git push -f https://github.com/etrex/Vuepress-Demo.git master
+</code></pre></div><p>其中，你會需要修改一下網址的部分，以及你可能會遇到需要在 Terminal 登入 github。</p> <h3 id="設定-github-pages"><a href="#設定-github-pages" aria-hidden="true" class="header-anchor">#</a> 設定 GitHub Pages</h3> <p>到 GitHub 專案的設定頁，以我的為例，網址如下：<a href="https://github.com/etrex/Vuepress-Demo/settings" target="_blank" rel="noopener noreferrer">https://github.com/etrex/Vuepress-Demo/settings<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <p>這個頁面很長，直接往下找到 GitHub Pages 的部分，你會看到一段文字：</p> <div class="language- extra-class"><pre class="language-text"><code>Source
+GitHub Pages is currently disabled. Select a source below to enable GitHub Pages for this repository. Learn more.
+</code></pre></div><p>有個選擇 Source 的下拉式選單在這段文字的下方處，預設是選在 <code>None</code>，改為選擇 <code>master branch</code> 就完成了，完成後再次查看 GitHub Pages 的部分，會發現一個超連結指向我們做好的網站！</p> <p>如果你點擊超連結後看到的是 GitHub Pages 的 404 網頁，請稍等個十分鐘再嘗試。如果還是沒有看見網站，請檢查你的 Repository 資料夾結構是否與<a href="https://github.com/etrex/Vuepress-Demo" target="_blank" rel="noopener noreferrer">我做出來的示範 Repository<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 相同。</p> <p>那麼今天的教學就到這邊。</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/Vuepress-Demo/assets/js/app.444ac1d0.js" defer></script><script src="/Vuepress-Demo/assets/js/5.a9bcf075.js" defer></script>
+  </body>
+</html>
